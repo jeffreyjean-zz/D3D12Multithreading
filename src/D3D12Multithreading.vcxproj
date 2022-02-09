@@ -215,7 +215,12 @@
   <ItemGroup>
     <ClCompile Include="Win32Application.cpp" />
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="D3D12Multithreading.cpp" />
+    <ClCompile Include="D3D12Multithreading.cpp">
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">MultiThreaded</RuntimeLibrary>
+    </ClCompile>
     <ClCompile Include="DXSample.cpp" />
     <ClCompile Include="FrameResource.cpp" />
     <ClCompile Include="Main.cpp" />
